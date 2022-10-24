@@ -2,6 +2,7 @@
   "name": "numbers-to-words",
   "version": "0.1.0",
   "dependencies": {
+    "concurrently": "^7.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "web-vitals": "^2.1.4"
@@ -20,10 +21,10 @@
   },
   "scripts": {
     "npm:install": "npm i && npm i --prefix server",
-    "start": "node ./node_modules/concurrently/dist/bin/concurrently.js -- \"npm run server:start\" \"npm run client:start\"",
+    "start": "npm run npm:install && node ./node_modules/concurrently/dist/bin/concurrently.js -- \"npm run server:start\" \"npm run client:start\"",
     "server:build": "rm -rf server/dist && cd server && tsc",
     "server:run": "node server/dist/Server.js",
-    "server:start": "npm run server:build && npm run client:start",
+    "server:start": "npm run server:build && npm run server:run",
     "client:start": "react-scripts start"
   },
   "eslintConfig": {
