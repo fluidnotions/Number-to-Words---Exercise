@@ -4,17 +4,19 @@ export class HttpClient {
   private axiosInstance: AxiosInstance;
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: `http://localhost:3001`,
+      baseURL: `http://localhost:4000`,
       headers: {
         "Content-Type": "application/json",
       },
     });
   }
 
-  async getNumbersToWords(num: number): Promise<string> {
-    const response = await this.axiosInstance.get(
+  async getNumbersToWords(num: string): Promise<string> {
+    console.log(`HttpClient -> getNumbersToWords -> num`, num)
+    const response = await this.axiosInstance.post(
       `/number-to-words/${num}`
     );
+    console.log(`HttpClient -> getNumbersToWords -> response`, response)
     return response.data.result;
   }
 }

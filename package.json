@@ -15,14 +15,16 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "react-scripts": "5.0.1",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "ts-node": "^10.9.1"
   },
   "scripts": {
-    "client:start": "react-scripts start",
-    "server:build": "rm -rf dist-server && cd server && tsc",
-    "server:run": "node dist-server/server.js",
+    "npm:install": "npm i && npm i --prefix server",
+    "start": "node ./node_modules/concurrently/dist/bin/concurrently.js -- \"npm run server:start\" \"npm run client:start\"",
+    "server:build": "rm -rf server/dist && cd server && tsc",
+    "server:run": "node server/dist/Server.js",
     "server:start": "npm run server:build && npm run client:start",
-    "start": "node ./node_modules/concurrently/dist/bin/concurrently.js -- \"npm run server:start\" \"npm run client:start\""
+    "client:start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [

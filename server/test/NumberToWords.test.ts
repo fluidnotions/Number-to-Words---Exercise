@@ -1,4 +1,5 @@
-import { NumberToWords } from "NumberToWords"
+import { NumberToWords } from "../src/NumberToWords"
+
 
 describe('NumberToWords', () => {
 

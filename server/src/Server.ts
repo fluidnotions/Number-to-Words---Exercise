@@ -6,7 +6,7 @@ const app: Express = express();
 app.use(cors)
 const port = 4000;
 
-app.get('/number-to-words/:number', (req: Request, res: Response) => {
+app.post('/number-to-words/:number', (req: Request, res: Response) => {
     const { params: { number } } = req
     console.log(`app.get -> number`, number)
     try {

@@ -4,3 +4,9 @@
   height: 90vh;
   padding: 2rem;
 }
+
+.result{
+  font-size: 2rem;
+  padding: 1rem;
+  color: green;
+}
