@@ -1,15 +1,18 @@
 {
-    "compilerOptions": {
-      "module": "commonjs",
-      "declaration": true,
-      "removeComments": true,
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "esModuleInterop": true,
-      "target": "es6",
-      "sourceMap": true,
-      "outDir": "../dist-server",
-      "baseUrl": "."
-    },
-    "include": ["src"],
-  }
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "lib": ["es2020"],
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "sourceMap": true,
+    "target": "es2019",
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "resolveJsonModule": true,
+    "outDir": "../dist-server"
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules"]
+}
