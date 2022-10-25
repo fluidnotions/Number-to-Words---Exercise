@@ -6,7 +6,7 @@ The client and server are independent node packages.
 However after repo clone, run ```npm run start``` this will:
 - run npm i for the frontend
 - run npm i for the server
-- build the server and start it (post: 4000)
+- build the server and start it (port: 4000)
 - build the frontend and start it (port: 3000)
 
 **Note: it can take a couple of min for both servers to build & start.**
